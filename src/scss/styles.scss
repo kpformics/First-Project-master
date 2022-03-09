@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@import "./variables";
+@import "./mixin";
+
+//components styles 
+@import "./default";
+@import "./menu";
+@import "./dashboard";
+@import "./employees";
+@import "./add";
+@import "./view";
+@import "./edit";
+
+
+body {
+    background-color: $whitesmoke;
+}
+

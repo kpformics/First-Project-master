@@ -1,0 +1,92 @@
+
+
+.employees-tab {
+    @include open-tab;
+     
+    h3 {
+        @include h3;
+    }
+    .add-new {
+        background-color: $primary-color;
+        color:$white;
+        width:200px;
+        height: 40px;
+        border-radius: 5px;
+        border:none;
+
+        &:hover {
+            box-shadow: $hover;
+        }
+
+    }
+}
+// **************************************************************
+.container-employees {
+    @include content_box;  
+   
+}
+
+
+// ********************************
+
+.top-part {
+    height:70px;
+    background-color:$whitesmoke;
+    margin: 20px;
+    border-radius: 5px;
+    display: flex;
+}
+#all-search {
+    border: none;
+    margin:15px;
+    width:40%;
+    height:40px;
+    border-radius:5px;
+    padding-left:20px;
+    box-shadow: $search;
+    
+}
+.list {
+    margin-left:500px;
+    @include view-type;
+}
+.grid {
+    @include view-type;
+}
+
+// *********************************
+
+.row {
+    text-align: center;
+    padding-left:30px;
+    width:95%;
+    margin-left: 20px;
+   
+}
+.column {
+    width:25%;
+    padding: 10px;
+}
+.card {
+    border: none;
+    background-color:$whitesmoke;
+    color:$primary-color;
+    align-items:center;
+}
+.title {
+    background-color: rgb(168, 163, 163);
+    border-radius: 20px;
+    color: $white;
+}
+.action-btn {
+    margin: 10px;
+    border: none;
+    background-color:rgb(168, 163, 163);
+    color: $primary-color;
+    border-radius: 5px;
+
+    &:hover {
+        box-shadow: $hover;
+    }
+  
+}

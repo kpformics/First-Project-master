@@ -1,0 +1,38 @@
+//mixins 
+
+
+//open tabs details 
+@mixin open-tab {
+    height:40px;
+    width:80%;
+    margin-left:280px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@mixin h3 {
+    color:$primary-color;   
+    font-size: 25px; 
+}
+
+//content screen 
+@mixin content_box {
+    height:550px;
+    width:80%;
+    margin:20px 0px 30px 280px;
+    background-color: $white;
+    border-radius:5px;
+    box-shadow: $content-box;
+    overflow: auto;
+}
+
+//view type in all employees-screen 
+@mixin view-type {
+    border:none;
+    color:$primary-color;
+    padding:12px;
+    font-weight: bold;
+    background-color: $whitesmoke;
+    
+}

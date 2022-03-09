@@ -1,0 +1,77 @@
+.add-employee {
+    @include open-tab;
+    
+    h3 {
+        @include h3;
+    }
+    .add-new {
+        background-color: $primary-color;
+        color:$white;
+        width:150px;
+        border-radius: 5px;
+        border:none;
+        
+        &:hover {
+            box-shadow: $hover;
+       }
+    }
+    .cancel {
+        @extend .add-new;
+        margin-left:730px;
+    }
+}
+// *****************************************************
+.container-add_employee {
+    @include content_box;
+    overflow: scroll;
+}
+.avtar-add {
+    color:$primary-color;
+    margin-left: 60px;
+}
+h5 {
+    margin: 10px;
+    padding: 30px;
+    font-weight: bold;
+    color: $primary-color;
+}
+input {
+    margin:20px;
+    margin-left:7px;
+    margin-right:30px;
+    padding:5px;
+    border:  1px solid $secondary-color;
+    padding-left:5px;
+}
+label {
+    font-weight:500;
+    color:$primary-color;    
+}
+select {
+    margin:20px;
+    margin-left:7px;
+    margin-right:30px;
+    padding:5px;
+    border: 1px solid $secondary-color;
+} //(for gender)
+
+
+// personal details //////////////////////////////////////
+
+.personal-details {
+    width:60%;
+    height:380px;
+    margin-left:25%;
+    margin-top: -220px;   
+    background-color: $whitesmoke;
+    padding-left: 35px;
+}
+
+////////////////////////////////////////////////////////////////
+
+//work details////////////////////////////////////////////////
+.work-details {
+    @extend .personal-details;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

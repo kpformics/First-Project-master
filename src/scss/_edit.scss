@@ -1,0 +1,31 @@
+
+
+.edit-employee{
+    @include open-tab;
+
+    h3 {
+        @include h3;
+    }
+    .save {
+        background-color: $primary-color;
+        color:$white;
+        width:150px;
+        border-radius: 5px;
+        border:none;
+        
+        &:hover {
+            box-shadow: $hover;
+       }
+    }
+    .delete {
+        color: rgb(199, 30, 30);
+        margin-left:730px;
+        border: 1px solid red;
+        font-weight: 700;
+        width:150px;
+    }
+}
+
+.container-edit_employee {
+    @include content-box;
+}

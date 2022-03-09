@@ -1,0 +1,26 @@
+.view-employee {
+    @include open-tab;
+
+    h3 {
+        @include h3;
+    }
+    .edit {
+        background-color: $primary-color;
+        color:$white;
+        width:150px;
+        height: 40px;
+        border-radius: 5px;
+        border:none;
+
+        &:hover {
+            box-shadow: $hover;
+       }
+    }
+}
+// ***********************************************************
+.container-view-employee {
+    @include content_box;
+}
+.h5 {
+    margin-left:-35px;
+}
