@@ -1,55 +1,53 @@
-
 <div class="employees-tab">
-    <h3> All-Employees </h3>
-    <a routerLink="/addemployee-component" routerLinkActive="active">
-    <button class="add-new"> + Add New Employee </button>
-    </a>
+  <h3>All-Employees</h3>
+  <a routerLink="/addemployee-component" routerLinkActive="active">
+    <button class="add-new">+ Add New Employee</button>
+  </a>
 </div>
- <hr>
- <!-- ******************************************************************** -->
+<hr />
+<!-- ******************************************************************** -->
 
 <div class="container-employees">
-
   <div class="top-part">
-    <input type="search" id="all-search" placeholder="Search by name">
+    <input type="search" id="all-search" placeholder="Search by name" />
 
-    <button class="list" onclick="listView()"><fa-icon [icon]="list"></fa-icon> List</button> 
-    <button class="grid" onclick="gridView()"><fa-icon [icon]="grid"></fa-icon> Grid</button>
+    <button class="list" onclick="listView()">
+      <fa-icon [icon]="list"></fa-icon> List
+    </button>
+    <button class="grid" onclick="gridView()">
+      <fa-icon [icon]="grid"></fa-icon> Grid
+    </button>
   </div>
 
-    
-      <div class="row" style=" margin-top:40px;" >
-       
-        <div class="column" *ngFor="let employee of employees">
-          <div class="card">         
-            <fa-icon [icon]="avtar" class="avtar fa-5x"></fa-icon>   
-            
-            <div class="details" > 
-              <h4>  {{employee.name}} </h4>
-              <p class="title"> {{employee.jobtitle}} </p>
-              <p> {{employee.email}} </p>
-              <p> {{employee.phone}} </p> 
-              <p> 
-                <a routerLink="/viewemployee-component">  
-                <button class="action-btn">
-                  <fa-icon [icon]="view"></fa-icon>
-                 </button>
-                </a> 
+  <div class="row" style="margin-top: 40px">
+    <div class="column" *ngFor="let employee of employees">
+      <div class="card">
+        <fa-icon [icon]="avtar" class="avtar fa-5x"></fa-icon>
 
-                 <button class="action-btn">
-                  <fa-icon [icon]="edit"></fa-icon>
-                 </button>
+        <div class="details">
+          <h4>{{ employee.name }}</h4>
+          <p class="title">{{ employee.jobtitle }}</p>
+          <p>{{ employee.email }}</p>
+          <p>{{ employee.phone }}</p>
+          <p>
+            <button class="action-btn" (click)="viewEmployee(employee.id)">
+              <fa-icon [icon]="view"></fa-icon>
+            </button>
 
-                 <button class="action-btn">
-                  <fa-icon [icon]="del"></fa-icon>
-                 </button>
-              </p>           
-            </div>
-          </div>
+            <button class="action-btn" (click)="editemployee(employee.id)">
+              <fa-icon [icon]="edit"></fa-icon>
+            </button>
+
+            <button class="action-btn">
+              <fa-icon [icon]="del"></fa-icon>
+            </button>
+          </p>
         </div>
-       
-        <!-- row end -->
-      </div>    
+      </div>
+    </div>
 
-<!-- container end -->
+    <!-- row end -->
   </div>
+
+  <!-- container end -->
+</div>

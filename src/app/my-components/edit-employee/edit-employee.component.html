@@ -1,77 +1,80 @@
 <div class="edit-employee">
-    <h3> Edit Employee </h3>
-    <button class="delete"> Delete </button>
-    <button class="save" type="submit"> Save </button>  
+  <h3>Edit Employee</h3>
+  <button class="delete">Delete</button>
+  <button class="save" type="submit">Save</button>
 </div>
- 
-<hr>
+
+<hr />
 <!-- ******************************************************************** -->
 
 <div class="container-edit_employee">
-
   <form action="../all-employees/all-employees.component.html">
-     
-    <fa-icon [icon]="avtar" class="fa-10x avtar-add "></fa-icon> <br>
-
-     
+    <fa-icon [icon]="avtar" class="fa-10x avtar-add"></fa-icon> <br />
 
     <!-- personal-details -->
     <div class="personal-details">
+      <h5>Personal details</h5>
 
-      <h5> Personal details </h5>
+      <label for="name">Name</label>
+      <input type="text" name="name" value="{{ employee?.name }}" />
 
-      <label for="name">Name</label> 
-      <input type="text" name="name" value="mark woe">
-    
-        <label for="birthdate">  Birth-Date  </label> 
-        <input type="date" name="birthdate" value="12 dec,1990"> <br>
-      
-       
-         <label for="gender"> Gender </label> 
-         <select id="gender" name="gender" value="male">
-            <option value="">select</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="other">other</option>
-        </select> 
+      <label for="birthdate"> Birth-Date </label>
+      <input type="date" name="birthdate" value="{{ employee?.birthdate }}" />
+      <br />
 
-        <label for="city"> City </label>
-        <input type="city" name="city" value="trishul"> <br>
-            
-        <label for="email">  Email </label> 
-        <input type="email" name="email" value="abc@email.com">
-              
-        <label for="phone"> Phone </label> 
-        <input type="tel" name="phone" value="8686799789"> <br>
-              
-      
-        
+      <label for="gender"> Gender </label>
+      <select id="gender" name="gender" value="{{ employee?.gender }}">
+        <option value="">select</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+
+      <label for="city"> City </label>
+      <input type="city" name="city" value="{{ employee?.city }}" /> <br />
+
+      <label for="email"> Email </label>
+      <input type="email" name="email" value="{{ employee?.email }}" />
+
+      <label for="phone"> Phone </label>
+      <input type="tel" name="phone" value="{{ employee?.phone }}" /> <br />
     </div>
 
-      <!-- work details -->
-      <div class="work-details">
+    <!-- work details -->
+    <div class="work-details">
+      <h5>Work details</h5>
 
-        <h5> Work details </h5>
+      <label for="job title">Job title</label>
+      <input type="text" name="Jobtitle" value="{{ employee?.jobtitle }}" />
 
-        <label for="job title">Job title</label> 
-        <input type="text" name="Jobtitle" value="tester"> 
+      <label for="Employment-type">Employment Type</label>
+      <input
+        type="text"
+        name="Employment-type"
+        value="{{ employee?.Employmenttype }}"
+      />
+      <br />
 
-        <label for="Employment-type">Employment Type</label> 
-        <input type="text" name="Employment-type" value="part-time"> <br>
+      <label for="joining-date">joining-Date</label>
+      <input
+        type="date"
+        name="joining-Date"
+        value="{{ employee?.joiningdate }}"
+      />
 
-        <label for="joining-date">joining-Date</label> 
-        <input type="date" name="joining-Date"value="30 jan,2019"> 
+      <label for="Contract expiry">Contract Expiry</label>
+      <input
+        type="date"
+        name="contract-expiry"
+        value="{{ employee?.contractexpiry }}"
+      />
+      <br />
 
-        <label for="Contract expiry">Contract Expiry</label> 
-        <input type="date" name="contract-expiry" value="1 feb, 2020"> <br>
+      <label for="doc">Document</label>
+      <input type="file" name="doc" multiple />
 
-        <label for="doc">Document</label> 
-        <input type="file" name="doc" multiple> 
-
-        <label for="salary"> salary </label> 
-        <input type="amount" name="salary" value="64693/-"> 
-       
-      </div>
-    </form>
+      <label for="salary"> salary </label>
+      <input type="amount" name="salary" value="{{ employee?.salary }}" />
+    </div>
+  </form>
 </div>
-

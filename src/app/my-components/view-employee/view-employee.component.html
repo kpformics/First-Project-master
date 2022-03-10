@@ -1,57 +1,56 @@
 <div class="view-employee">
-    <h3> View-Employee </h3>
-    <a routerLink="/editemployee-component" routerLinkActive="active">
-    <button class="edit"> Edit </button>  
-    </a>
+  <h3>View-Employee</h3>
+  <a routerLink="/editemployee-component" routerLinkActive="active">
+    <button class="edit">Edit</button>
+  </a>
 </div>
- 
-<hr>
+
+<hr />
 <!-- ******************************************************************** -->
 
-<div class="container-view-employee" *ngFor="let employee of employees">
+<div class="container-view-employee">
+  <fa-icon [icon]="avtar" class="fa-10x avtar-add"></fa-icon> <br />
 
-    <fa-icon [icon]="avtar" class="fa-10x avtar-add "></fa-icon> <br>
+  <div class="personal-details">
+    <h5 class="h5">Personal details</h5>
+    <!-- h5 design is _add.scss -->
 
-    <div class="personal-details">
-        <h5 class="h5"> Personal details </h5>  <!-- h5 design is _add.scss -->
-        
-        <!-- {{employee.id}} -->
+    <label for="name">Name :</label>
+    {{ employee?.name }} <br /><br />
 
-        <label for="name">Name :</label> 
-         <!-- {{employee.name}} <br><br> -->
+    <label for="birthdate"> Birth-Date : </label>
+    {{ employee?.birthdate }} <br /><br />
 
-        <label for="birthdate">  Birth-Date : </label> 
-         26 nov,1998 <br><br>
-        
-        <label for="gender"> Gender : </label> 
-        male <br><br>
-       
-        <label for="city"> City : </label>
-        Rajkot <br><br>
-       
-        <label for="email">  Email : </label> 
-        gdhh@email.com <br><br>
-       
-        <label for="phone"> Phone : </label> 
-        7068038098
+    <label for="gender"> Gender : </label>
+    {{ employee?.gender }} <br /><br />
 
-    </div>
+    <label for="city"> City : </label>
+    {{ employee?.city }} <br /><br />
 
-    <div class="work-details">
-        <h5 class="h5"> Work details </h5>
+    <label for="email"> Email : </label>
+    {{ employee?.email }} <br /><br />
 
-        <label for="job title">Job title : </label>       Designer <br><br>
+    <label for="phone"> Phone : </label>
+    {{ employee?.phone }}
+  </div>
 
-        <label for="Employment-type"> Employment Type : </label>       Full-time <br><br>
+  <div class="work-details">
+    <h5 class="h5">Work details</h5>
 
-        <label for="joining-date">joining-Date : </label>        21 Feb,2019 <br><br>
+    <label for="job title">Job title : </label> {{ employee?.jobtitle }}
+    <br /><br />
 
-        <label for="Contract expiry">Contract Expiry : </label>       21 Feb,2020 <br><br>
+    <label for="Employment-type"> Employment Type : </label>
+    {{ employee?.Employmenttype }} <br /><br />
 
-        <label for="doc">Document : </label>       Aadhar card,  <br><br>
+    <label for="joining-date">joining-Date : </label>
+    {{ employee?.joiningdate }} <br /><br />
 
-        <label for="salary"> salary : </label>       21000/-
+    <label for="Contract expiry">Contract Expiry : </label>
+    {{ employee?.contractexpiry }} <br /><br />
 
-    </div>
+    <label for="doc">Document : </label> {{ employee?.document }} <br /><br />
 
+    <label for="salary"> salary : </label> {{ employee?.salary }}
+  </div>
 </div>

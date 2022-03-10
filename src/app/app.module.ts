@@ -18,6 +18,8 @@ import { ViewEmployeeComponent } from './my-components/view-employee/view-employ
 import { EditEmployeeComponent } from './my-components/edit-employee/edit-employee.component';
 
 import { EmployeeService} from './services/employee.service';
+import {HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { EmployeeService} from './services/employee.service';
     FormsModule,
     FontAwesomeModule,
     AppRoutingModule,
-    NgbModule 
+    NgbModule,
+    HttpClientModule 
   ],
   providers: [ EmployeeService ],
   bootstrap: [AppComponent]

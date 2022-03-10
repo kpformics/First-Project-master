@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {  faEdit, faEye, faGrip, faList, faTrash, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import {
+  faEdit,
+  faEye,
+  faGrip,
+  faList,
+  faTrash,
+  faUserTie,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { EmployeeService } from 'src/app/services/employee.service';
+import { EmployeeInterface } from 'src/interfaces/employee.interface';
 
 @Component({
   selector: 'app-all-employees',
   templateUrl: './all-employees.component.html',
-  styleUrls: ['./all-employees.component.scss']
+  styleUrls: ['./all-employees.component.scss'],
 })
 export class AllEmployeesComponent implements OnInit {
-
   //icons
   avtar = faUserTie;
   view = faEye;
@@ -18,13 +26,23 @@ export class AllEmployeesComponent implements OnInit {
   list = faList;
   grid = faGrip;
 
-  public employees:any[] = [];
-  
-  constructor(private  _employeeservice:EmployeeService) { }
+  employees: EmployeeInterface[] | [] = [];
+  constructor(
+    private employeesService: EmployeeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.employees = this._employeeservice.getemployees();
+    this.employeesService.employess().subscribe((data) => {
+      this.employees = data;
+    });
   }
- 
 
+  viewEmployee(employeeid: number) {
+    this.router.navigate([`viewemployee-component/${employeeid}`]);
+  }
+
+  editemployee(employeeid: number) {
+    this.router.navigate([`editemployee-component/${employeeid}`]);
+  }
 }
