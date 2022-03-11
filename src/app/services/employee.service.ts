@@ -20,11 +20,19 @@ export class EmployeeService {
   }
 
   //edit
-  editemployee(employeeEditId: number) {
-    // return this.http.put<EmployeeInterface>(`${this.url}/${employeeEditId}`);
+  editemployee(employeeEditId: number, data: any) {
+    return this.http.put(`${this.url}/${employeeEditId}`, {
+      data,
+    });
   }
 
+  //add
   addemployee(addemployee: EmployeeInterface) {
     return this.http.post(`${this.url}`, addemployee);
+  }
+
+  //delete
+  deleteemployee(deleteemployeeId: number) {
+    return this.http.delete(`${this.url}/${deleteemployeeId}`);
   }
 }

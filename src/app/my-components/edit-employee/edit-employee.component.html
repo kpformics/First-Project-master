@@ -1,14 +1,20 @@
 <div class="edit-employee">
   <h3>Edit Employee</h3>
   <button class="delete">Delete</button>
-  <button class="save" type="submit">Save</button>
+  <button
+    class="save"
+    type="submit"
+    (click)="updateemployee(employeeid, employee)"
+  >
+    Save
+  </button>
 </div>
 
 <hr />
 <!-- ******************************************************************** -->
 
 <div class="container-edit_employee">
-  <form action="../all-employees/all-employees.component.html">
+  <form>
     <fa-icon [icon]="avtar" class="fa-10x avtar-add"></fa-icon> <br />
 
     <!-- personal-details -->
@@ -16,14 +22,14 @@
       <h5>Personal details</h5>
 
       <label for="name">Name</label>
-      <input type="text" name="name" value="{{ employee?.name }}" />
+      <input type="text" name="name" formControlName="name" />
 
       <label for="birthdate"> Birth-Date </label>
-      <input type="date" name="birthdate" value="{{ employee?.birthdate }}" />
+      <input type="date" name="birthdate" formControlName="birthdate" />
       <br />
 
       <label for="gender"> Gender </label>
-      <select id="gender" name="gender" value="{{ employee?.gender }}">
+      <select id="gender" name="gender" formControlName="gender">
         <option value="">select</option>
         <option value="male">male</option>
         <option value="female">female</option>
@@ -31,13 +37,13 @@
       </select>
 
       <label for="city"> City </label>
-      <input type="city" name="city" value="{{ employee?.city }}" /> <br />
+      <input type="city" name="city" formControlName="city" /> <br />
 
       <label for="email"> Email </label>
-      <input type="email" name="email" value="{{ employee?.email }}" />
+      <input type="email" name="email" formControlName="email" />
 
       <label for="phone"> Phone </label>
-      <input type="tel" name="phone" value="{{ employee?.phone }}" /> <br />
+      <input type="tel" name="phone" formControlName="phone" /> <br />
     </div>
 
     <!-- work details -->
@@ -45,28 +51,24 @@
       <h5>Work details</h5>
 
       <label for="job title">Job title</label>
-      <input type="text" name="Jobtitle" value="{{ employee?.jobtitle }}" />
+      <input type="text" name="Jobtitle" formControlName="Jobtitle" />
 
       <label for="Employment-type">Employment Type</label>
       <input
         type="text"
         name="Employment-type"
-        value="{{ employee?.Employmenttype }}"
+        formControlName="employmenttype"
       />
       <br />
 
       <label for="joining-date">joining-Date</label>
-      <input
-        type="date"
-        name="joining-Date"
-        value="{{ employee?.joiningdate }}"
-      />
+      <input type="date" name="joining-Date" formControlName="joiningdate" />
 
       <label for="Contract expiry">Contract Expiry</label>
       <input
         type="date"
         name="contract-expiry"
-        value="{{ employee?.contractexpiry }}"
+        formControlName="contractexpiry"
       />
       <br />
 
@@ -74,7 +76,7 @@
       <input type="file" name="doc" multiple />
 
       <label for="salary"> salary </label>
-      <input type="amount" name="salary" value="{{ employee?.salary }}" />
+      <input type="amount" name="salary" formControlName="salary" />
     </div>
   </form>
 </div>

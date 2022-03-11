@@ -1,80 +1,121 @@
 <div class="add-employee">
-    <h3> Add-Employee </h3>
-    <button class="cancel" type="reset"> Cancel </button>
-    <button class="add-new" type="submit" (click)="dosubmitform()"> Add </button>  
+  <h3>Add-Employee</h3>
+  <button class="cancel" type="reset">Cancel</button>
+  <button class="add-new" type="submit" (click)="addEmployee(data)">Add</button>
 </div>
- 
-<hr>
+
+<hr />
 <!-- ******************************************************************** -->
 
 <div class="container-add_employee">
-
-  <form (ngSubmit)="dosubmitform()">
-     
-    <fa-icon [icon]="avtar" class="fa-10x avtar-add "></fa-icon> <br>
-
-   
+  <form>
+    <fa-icon [icon]="avtar" class="fa-10x avtar-add"></fa-icon> <br />
 
     <!-- personal-details -->
     <div class="personal-details">
+      <h5>Personal details</h5>
 
-      <h5> Personal details </h5>
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="data.name"
+        placeholder="Name"
+      />
 
-      <label for="name">Name</label> 
-      <input type="text" name="name" [(ngModel)]="data.name" placeholder="Name">
-    
-        <label for="birthdate">  Birth-Date  </label> 
-        <input type="date" name="birthdate"  [(ngModel)]="data.birthdate" placeholder="Birth-Date"> <br>
-      
-       
-         <label for="gender"> Gender </label> 
-         <select id="gender" name="gender" [(ngModel)]="data.gender">
-            <option value="">select</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="other">other</option>
-        </select> 
+      <label for="birthdate"> Birth-Date </label>
+      <input
+        type="date"
+        name="birthdate"
+        [(ngModel)]="data.birthdate"
+        placeholder="Birth-Date"
+      />
+      <br />
 
-        <label for="city"> City </label>
-        <input type="city" name="city"  [(ngModel)]="data.city" placeholder="city"> <br>
-            
-        <label for="email">  Email </label> 
-        <input type="email" name="email"  [(ngModel)]="data.email" placeholder="abc@email.com">
-              
-        <label for="phone"> Phone </label> 
-        <input type="tel" name="phone"  [(ngModel)]="data.phone" placeholder="Phone number"> <br>
-              
-      
-        
+      <label for="gender"> Gender </label>
+      <select id="gender" name="gender" [(ngModel)]="data.gender">
+        <option value="">select</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="other">other</option>
+      </select>
+
+      <label for="city"> City </label>
+      <input
+        type="city"
+        name="city"
+        [(ngModel)]="data.city"
+        placeholder="city"
+      />
+      <br />
+
+      <label for="email"> Email </label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="data.email"
+        placeholder="abc@email.com"
+      />
+
+      <label for="phone"> Phone </label>
+      <input
+        type="tel"
+        name="phone"
+        [(ngModel)]="data.phone"
+        placeholder="Phone number"
+      />
+      <br />
     </div>
 
-      <!-- work details -->
-      <div class="work-details">
+    <!-- work details -->
+    <div class="work-details">
+      <h5>Work details</h5>
 
-        <h5> Work details </h5>
+      <label for="job title">Job title</label>
+      <input
+        type="text"
+        name="jobtitle"
+        [(ngModel)]="data.jobtitle"
+        placeholder="Job title"
+      />
 
-        <label for="job title">Job title</label> 
-        <input type="text" name="jobtitle"  [(ngModel)]="data.jobtitle" placeholder="Job title"> 
+      <label for="Employment-type">Employment Type</label>
+      <input
+        type="text"
+        name="emptype"
+        [(ngModel)]="data.Employmenttype"
+        placeholder="Employment-type"
+      />
+      <br />
 
-        <label for="Employment-type">Employment Type</label> 
-        <input type="text" name="emptype"  [(ngModel)]="data.emptype" placeholder="Employment-type"> <br>
+      <label for="joining-date">joining-Date</label>
+      <input
+        type="date"
+        name="joiningdate"
+        [(ngModel)]="data.joiningdate"
+        placeholder="Date"
+      />
 
-        <label for="joining-date">joining-Date</label> 
-        <input type="date" name="joiningdate"  [(ngModel)]="data.joiningdate" placeholder="Date"> 
+      <label for="Contract expiry">Contract Expiry</label>
+      <input
+        type="date"
+        name="contractexpiry"
+        [(ngModel)]="data.contractexpiry"
+        placeholder="date"
+      />
+      <br />
 
-        <label for="Contract expiry">Contract Expiry</label> 
-        <input type="date" name="contractexpiry" [(ngModel)]="data.contractexpiry" placeholder="date"> <br>
+      <label for="doc">Document</label>
+      <input type="file" name="doc" [(ngModel)]="data.document" multiple />
 
-        <label for="doc">Document</label> 
-        <input type="file" name="doc" [(ngModel)]="data.doc" multiple> 
-
-        <label for="salary"> salary </label> 
-        <input type="amount" name="salary" [(ngModel)]="data.salary" placeholder="salary"> 
-       
-      </div>
-    </form>
-    <!-- {{ data|json}} -->
-   
+      <label for="salary"> salary </label>
+      <input
+        type="amount"
+        name="salary"
+        [(ngModel)]="data.salary"
+        placeholder="salary"
+      />
+    </div>
+  </form>
+  <!-- {{ data|json}} -->
 </div>
-
-

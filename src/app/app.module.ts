@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,9 +16,8 @@ import { AddEmployeeComponent } from './my-components/add-employee/add-employee.
 import { ViewEmployeeComponent } from './my-components/view-employee/view-employee.component';
 import { EditEmployeeComponent } from './my-components/edit-employee/edit-employee.component';
 
-import { EmployeeService} from './services/employee.service';
-import {HttpClientModule } from '@angular/common/http';
-
+import { EmployeeService } from './services/employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,17 +28,18 @@ import {HttpClientModule } from '@angular/common/http';
     DefaultScreenComponent,
     AddEmployeeComponent,
     ViewEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule 
+    HttpClientModule,
   ],
-  providers: [ EmployeeService ],
-  bootstrap: [AppComponent]
+  providers: [EmployeeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

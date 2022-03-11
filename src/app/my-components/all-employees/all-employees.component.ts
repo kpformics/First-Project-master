@@ -45,4 +45,10 @@ export class AllEmployeesComponent implements OnInit {
   editemployee(employeeid: number) {
     this.router.navigate([`editemployee-component/${employeeid}`]);
   }
+
+  deleteemployee(employeeId: number) {
+    this.employeesService.deleteemployee(employeeId).subscribe((data) => {
+      alert(`deleted employee id ${employeeId}`);
+    });
+  }
 }
