@@ -22,7 +22,7 @@ export class EmployeeService {
   //edit
   editemployee(employeeEditId: number, data: any) {
     return this.http.put(`${this.url}/${employeeEditId}`, {
-      data,
+      ...data,
     });
   }
 

@@ -4,12 +4,12 @@ export interface EmployeeInterface {
   salary: string;
   phone: number;
   email: string;
-  birthdate: string;
+  birthDate: string;
   gender: string;
   city: string;
-  jobtitle: string;
-  Employmenttype: string;
-  joiningdate: string;
-  contractexpiry: string;
-  document: string;
+  jobTitle: string;
+  employmenttype: string;
+  joiningDate: string;
+  contractExpiry: string;
+  documents: string;
 }

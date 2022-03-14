@@ -18,14 +18,14 @@ export class AddEmployeeComponent implements OnInit {
     salary: '',
     phone: 0,
     email: '',
-    birthdate: '',
+    birthDate: '',
     gender: '',
     city: '',
-    jobtitle: '',
-    Employmenttype: '',
-    joiningdate: '',
-    contractexpiry: '',
-    document: '',
+    jobTitle: '',
+    employmenttype: '',
+    joiningDate: '',
+    contractExpiry: '',
+    documents: '',
   };
 
   constructor(

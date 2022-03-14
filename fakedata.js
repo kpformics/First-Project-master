@@ -14,12 +14,12 @@ for (var i = 1; i <= 50; i++) {
     phone: faker.datatype.number(),
     email: "employee" + i.toString() + "@getnada.com",
     birthDate: "birthdate" + i.toString(),
-    gender: "gender" + i.toString(),
+    gender: i % 2 == 0 ? "male" : "female",
     city: "city" + i.toString(),
     jobTitle: "jobtitle" + i.toString(),
     employmenttype: "Employmenttype" + i.toString(),
     joiningDate: "joiningdate" + i.toString(),
-    contractExpiry: "contractexpiry" + i.toString(),
+    contractExpiry: "31/12/2022",
     documents: "Document" + i.toString(),
   });
 }

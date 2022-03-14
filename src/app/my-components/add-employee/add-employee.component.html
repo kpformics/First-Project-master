@@ -26,8 +26,8 @@
       <label for="birthdate"> Birth-Date </label>
       <input
         type="date"
-        name="birthdate"
-        [(ngModel)]="data.birthdate"
+        name="birthDate"
+        [(ngModel)]="data.birthDate"
         placeholder="Birth-Date"
       />
       <br />
@@ -74,16 +74,16 @@
       <label for="job title">Job title</label>
       <input
         type="text"
-        name="jobtitle"
-        [(ngModel)]="data.jobtitle"
+        name="jobTitle"
+        [(ngModel)]="data.jobTitle"
         placeholder="Job title"
       />
 
       <label for="Employment-type">Employment Type</label>
       <input
         type="text"
-        name="emptype"
-        [(ngModel)]="data.Employmenttype"
+        name="employmenttype"
+        [(ngModel)]="data.employmenttype"
         placeholder="Employment-type"
       />
       <br />
@@ -91,22 +91,27 @@
       <label for="joining-date">joining-Date</label>
       <input
         type="date"
-        name="joiningdate"
-        [(ngModel)]="data.joiningdate"
+        name="joiningDate"
+        [(ngModel)]="data.joiningDate"
         placeholder="Date"
       />
 
       <label for="Contract expiry">Contract Expiry</label>
       <input
         type="date"
-        name="contractexpiry"
-        [(ngModel)]="data.contractexpiry"
+        name="contractExpiry"
+        [(ngModel)]="data.contractExpiry"
         placeholder="date"
       />
       <br />
 
       <label for="doc">Document</label>
-      <input type="file" name="doc" [(ngModel)]="data.document" multiple />
+      <input
+        type="text"
+        name="documents"
+        [(ngModel)]="data.documents"
+        multiple
+      />
 
       <label for="salary"> salary </label>
       <input
