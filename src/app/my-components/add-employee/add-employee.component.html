@@ -1,14 +1,16 @@
-<div class="add-employee">
-  <h3>Add-Employee</h3>
-  <button class="cancel" type="reset">Cancel</button>
-  <button class="add-new" type="submit" (click)="addEmployee(data)">Add</button>
-</div>
+<form>
+  <div class="add-employee">
+    <h3>Add-Employee</h3>
+    <button class="cancel" type="reset" value="Reset">Cancel</button>
+    <button class="add-new" type="submit" (click)="addEmployee(data)">
+      Add
+    </button>
+  </div>
 
-<hr />
-<!-- ******************************************************************** -->
+  <hr />
+  <!-- ******************************************************************** -->
 
-<div class="container-add_employee">
-  <form>
+  <div class="container-add_employee">
     <fa-icon [icon]="avtar" class="fa-10x avtar-add"></fa-icon> <br />
 
     <!-- personal-details -->
@@ -121,6 +123,5 @@
         placeholder="salary"
       />
     </div>
-  </form>
-  <!-- {{ data|json}} -->
-</div>
+  </div>
+</form>

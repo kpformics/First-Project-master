@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 import {
   faEdit,
   faEye,
@@ -27,10 +29,15 @@ export class AllEmployeesComponent implements OnInit {
   grid = faGrip;
 
   employees: EmployeeInterface[] | [] = [];
+  typeselected: string;
+
   constructor(
     private employeesService: EmployeeService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {
+    this.typeselected = 'square-jelly-box';
+  }
 
   ngOnInit(): void {
     this.employeesService.employess().subscribe((data) => {
@@ -47,8 +54,24 @@ export class AllEmployeesComponent implements OnInit {
   }
 
   deleteemployee(employeeId: number) {
+    // spinner starts here
+    this.spinner.show();
     this.employeesService.deleteemployee(employeeId).subscribe((data) => {
-      alert(`deleted employee id ${employeeId}`);
+      this.employeesService.employess().subscribe((data) => {
+        this.employees = data;
+      });
     });
+    // spinner stops here
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 5000);
   }
+
+  // showSpinner(): void {
+  //   this.spinner.show();
+
+  //   setTimeout(() => {
+  //     this.spinner.hide();
+  //   }, 2000);
+  // }
 }

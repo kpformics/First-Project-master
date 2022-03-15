@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeInterface } from 'src/interfaces/employee.interface';
@@ -16,7 +17,8 @@ export class ViewEmployeeComponent implements OnInit {
   employee: EmployeeInterface | undefined;
   constructor(
     private employeedata: EmployeeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -24,5 +26,9 @@ export class ViewEmployeeComponent implements OnInit {
     this.employeedata.employee(this.employeeid).subscribe((data) => {
       this.employee = data;
     });
+  }
+
+  editemployee(employeeid: number) {
+    this.router.navigate([`editemployee-component/${employeeid}`]);
   }
 }

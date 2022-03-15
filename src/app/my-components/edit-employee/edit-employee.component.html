@@ -2,7 +2,9 @@
   <form [formGroup]="editform">
     <div class="edit-employee">
       <h3>Edit Employee</h3>
-      <button class="delete">Delete</button>
+      <button class="delete" (click)="deleteemployee(employeeid)">
+        Delete
+      </button>
       <button class="save" type="submit" (click)="onsubmit(employeeid)">
         Save
       </button>

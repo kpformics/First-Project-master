@@ -4,6 +4,7 @@ import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeInterface } from 'src/interfaces/employee.interface';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { AllEmployeesComponent } from '../all-employees/all-employees.component';
 
 @Component({
   selector: 'app-edit-employee',
@@ -51,29 +52,36 @@ export class EditEmployeeComponent implements OnInit {
       .subscribe((data: any) => {});
   }
 
-  // edit form will send only those values which are edited
-  // onsubmit(employeeid: number) {
-  //   let dirtyValuesList = this.getDirtyValues(this.editform);
-  //   console.log('dirty values:', dirtyValuesList);
-  //   let data = dirtyValuesList;
-  //   this.employeeService
-  //     .editemployee(employeeid, data)
-  //     .subscribe((data: any) => {});
-  // }
-
-  // getDirtyValues(editform: any) {
-  //   let dirtyValues: any = {};
-
-  //   Object.keys(editform.controls).forEach((key) => {
-  //     let currentControl: any = editform.controls[key];
-
-  //     if (currentControl.dirty) {
-  //       if (currentControl.controls)
-  //         dirtyValues[key] = this.getDirtyValues(currentControl);
-  //       else dirtyValues[key] = currentControl.value;
-  //     }
-  //   });
-
-  //   return dirtyValues;
-  // }
+  //delete employee
+  deleteemployee(employeeId: number) {
+    this.employeeService.deleteemployee(employeeId).subscribe((data) => {
+      alert(`deleted employee id ${employeeId}`);
+    });
+  }
 }
+
+// edit form will send only those values which are edited
+// onsubmit(employeeid: number) {
+//   let dirtyValuesList = this.getDirtyValues(this.editform);
+//   console.log('dirty values:', dirtyValuesList);
+//   let data = dirtyValuesList;
+//   this.employeeService
+//     .editemployee(employeeid, data)
+//     .subscribe((data: any) => {});
+// }
+
+// getDirtyValues(editform: any) {
+//   let dirtyValues: any = {};
+
+//   Object.keys(editform.controls).forEach((key) => {
+//     let currentControl: any = editform.controls[key];
+
+//     if (currentControl.dirty) {
+//       if (currentControl.controls)
+//         dirtyValues[key] = this.getDirtyValues(currentControl);
+//       else dirtyValues[key] = currentControl.value;
+//     }
+//   });
+
+//   return dirtyValues;
+// }

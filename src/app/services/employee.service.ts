@@ -6,6 +6,12 @@ import { EmployeeInterface } from 'src/interfaces/employee.interface';
   providedIn: 'root',
 })
 export class EmployeeService {
+  show() {
+    throw new Error('Method not implemented.');
+  }
+  hide() {
+    throw new Error('Method not implemented.');
+  }
   url = 'http://localhost:3000/employees';
   constructor(private http: HttpClient) {}
 
