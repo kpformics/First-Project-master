@@ -45,7 +45,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressSpinnerModule,
     NgxSpinnerModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [EmployeeService],
   bootstrap: [AppComponent],
