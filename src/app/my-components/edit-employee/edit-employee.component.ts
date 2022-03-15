@@ -22,44 +22,58 @@ export class EditEmployeeComponent implements OnInit {
   employeeid: number = 0;
   employee: EmployeeInterface | undefined;
 
-  editform!: FormGroup;
-
+  editform = this.fb.group({
+    name: ['xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'],
+    birthDate: [''],
+    gender: [''],
+    city: [''],
+    email: [''],
+    phone: [''],
+    jobTitle: [''],
+    employmenttype: [''],
+    joiningDate: [''],
+    contractExpiry: [''],
+    documents: [''],
+    salary: [''],
+  });
   ngOnInit(): void {
-    this.editform = this.fb.group({
-      name: new FormControl(''),
-      birthDate: [''],
-      gender: [''],
-      city: new FormControl(''),
-      email: [''],
-      phone: [''],
-      jobTitle: [''],
-      employmenttype: [''],
-      joiningDate: [''],
-      contractExpiry: [''],
-      documents: [''],
-      salary: [''],
-    });
-
     this.employeeid = this.route.snapshot.params['id'];
     this.employeeService.employee(this.employeeid).subscribe((data) => {
       this.employee = data;
+      this.editform.patchValue({ ...data });
     });
   }
 
-  // updateemployee(employeeid: number, data: any) {
+  // edit form will send all form values
+  onsubmit(employeeid: number) {
+    this.employeeService
+      .editemployee(employeeid, this.editform.getRawValue())
+      .subscribe((data: any) => {});
+  }
+
+  // edit form will send only those values which are edited
+  // onsubmit(employeeid: number) {
+  //   let dirtyValuesList = this.getDirtyValues(this.editform);
+  //   console.log('dirty values:', dirtyValuesList);
+  //   let data = dirtyValuesList;
   //   this.employeeService
   //     .editemployee(employeeid, data)
   //     .subscribe((data: any) => {});
   // }
 
-  onsubmit(employeeid: number) {
-    let data = this.editform.getRawValue();
-    this.employeeService
-      .editemployee(employeeid, data)
-      .subscribe((data: any) => {});
-  }
+  // getDirtyValues(editform: any) {
+  //   let dirtyValues: any = {};
 
-  // changevalue() {
-  //   this.editform;
+  //   Object.keys(editform.controls).forEach((key) => {
+  //     let currentControl: any = editform.controls[key];
+
+  //     if (currentControl.dirty) {
+  //       if (currentControl.controls)
+  //         dirtyValues[key] = this.getDirtyValues(currentControl);
+  //       else dirtyValues[key] = currentControl.value;
+  //     }
+  //   });
+
+  //   return dirtyValues;
   // }
 }
